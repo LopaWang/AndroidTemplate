@@ -1,0 +1,37 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 23
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    api fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation 'junit:junit:4.12'
+    api 'com.android.support:appcompat-v7:23.0.1'
+    api 'org.xutils:xutils:3.3.36'
+    api 'com.google.code.gson:gson:2.2.4'
+    api 'com.squareup.okhttp3:okhttp:3.4.1'
+    api 'de.hdodenhof:circleimageview:2.1.0'
+    api 'com.github.bumptech.glide:glide:3.7.0'
+    api 'org.litepal.android:core:1.3.2'
+    api files('libs/nineoldandroids-2.4.0.jar')
+    api 'com.makeramen:roundedimageview:2.2.1'
+    api 'com.android.support:support-v4:23.0.0'
+}
